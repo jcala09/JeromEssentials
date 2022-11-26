@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+/* media queries  ( medium devices) */
+
+@media screen and (max-width:1024px){
+  .container{
+      width:var(--container-width-md);
+  }
+
+  section{
+      margin-top:6rem;
+  }
+  
+}
+
+/* media queries  ( small devices) */
+
+@media screen and (max-width:600px){
+  .container{
+      width:var(--container-width-sm);
+  }
+
+  section > h2{
+      margin-top: 2rem;
+  }
+  
+}

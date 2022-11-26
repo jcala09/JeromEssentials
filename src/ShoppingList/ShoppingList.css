@@ -19,17 +19,26 @@
   align-items: center;
 }
 
+.header
+{
+  height:100vh;
+    padding-top: 7rem;
+    overflow:hidden;
+}
 
 h1{
     color:white;
     position: absolute;
     top: 0%;
-    left: 37.5%;
+    
     
 }
 .TitleContainer
 {
-    padding-top: -500
+  text-align: center;
+  height: 100%;
+  position: relative;
+  
      
 }
 
