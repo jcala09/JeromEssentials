@@ -18,7 +18,7 @@ function ShoppingList() {
         const newList= [];
         for( let i =0; i <list.length; i++)
         {
-            if (index != i)
+            if (index !== i)
             {
                 newList.push(list[i]);
             }
