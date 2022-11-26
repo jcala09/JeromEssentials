@@ -1,0 +1,45 @@
+
+.ShoppingList
+{
+    background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+  width: 40%;
+  padding: 30px;
+  text-align: center;
+  padding-top: 5%;
+  display:grid;
+  align-items: center;
+}
+
+
+h1{
+    color:white;
+    position: absolute;
+    top: 0%;
+    left: 37.5%;
+    
+}
+.TitleContainer
+{
+    padding-top: -500
+     
+}
+
+.background
+{
+   background: url(./Bruh.jpg) no-repeat center center fixed;
+  background-size: "cover";
+  filter: blur(4px);
+  height: 100vh;
+  font-size:50px;
+  background-repeat:no-repeat; 
+  ;
+}
