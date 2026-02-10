@@ -1,0 +1,63 @@
+service: jeromessentials-backend
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  stage: dev
+  environment:
+    TABLE_NAME: ${self:custom.tableName}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:PutItem
+        - dynamodb:DeleteItem
+      Resource:
+        - "arn:aws:dynamodb:${self:provider.region}:*:table/${self:custom.tableName}"
+
+custom:
+  tableName: ShoppingList
+
+functions:
+  getItems:
+    handler: lambda/getItems.handler
+    events:
+      - http:
+          path: items/{userId}
+          method: get
+          cors: true
+  
+  addItem:
+    handler: lambda/addItem.handler
+    events:
+      - http:
+          path: items/{userId}
+          method: post
+          cors: true
+  
+  deleteItem:
+    handler: lambda/deleteItem.handler
+    events:
+      - http:
+          path: items/{userId}/{itemId}
+          method: delete
+          cors: true
+
+resources:
+  Resources:
+    ShoppingListTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:custom.tableName}
+        AttributeDefinitions:
+          - AttributeName: userId
+            AttributeType: S
+          - AttributeName: itemId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: userId
+            KeyType: HASH
+          - AttributeName: itemId
+            KeyType: RANGE
+        BillingMode: PAY_PER_REQUEST
