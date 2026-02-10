@@ -1,23 +1,59 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
+# dependencies (reinstall with npm install)
+node_modules
 /node_modules
+backend/node_modules
 /.pnp
 .pnp.js
 
 # testing
 /coverage
 
-# production
+# production / build output (regenerate with npm run build)
 /build
+/dist
 
-# misc
-.DS_Store
+# environment & secrets (never upload)
+.env
+.env.*
+!.env.example
+env.local
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
+# passwords & sensitive (never upload)
+* pw.txt
+*.pw.txt
+*password*
+*.pem
+*.key
+secrets.*
+
+# serverless deployment artifacts (regenerated on deploy)
+backend/.serverless
+
+# IDE / editor (local only)
+.idea
+.vscode
+.cursor
+
+# OS (local only)
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# cache
+.cache
+*.tsbuildinfo
+
+#md 
+*.md
