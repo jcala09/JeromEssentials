@@ -23,7 +23,7 @@ env.local
 .env.development.local
 .env.test.local
 .env.production.local
-
+vault
 # passwords & sensitive (never upload)
 * pw.txt
 *.pw.txt
